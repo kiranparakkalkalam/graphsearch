@@ -32,7 +32,3 @@ class Graph:
     def repr(self):
         ''' Print the adjcency matrix'''
         print(self._graph)
-
-if __name__ == "__main__":
-    g = Graph("small_graph.txt")
-    g.visualize()
