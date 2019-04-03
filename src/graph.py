@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 #
 # Graph class to represen the graph in adjcency matrix
 #
@@ -5,6 +6,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 
+from settings import BASE_DIR
 
 class Graph:
     '''
@@ -31,3 +33,6 @@ class Graph:
         ''' Print the adjcency matrix'''
         print(self._graph)
 
+if __name__ == "__main__":
+    g = Graph("small_graph.txt")
+    g.visualize()
