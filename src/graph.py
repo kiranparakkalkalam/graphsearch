@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 #
 # Graph class to represen the graph in adjcency matrix
 #
@@ -6,7 +5,6 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 
-from settings import BASE_DIR
 
 class Graph:
     '''
@@ -21,7 +19,8 @@ class Graph:
                 rows = fw.read().splitlines()
                 for row in rows:
                     self._graph.append([int(each) for each in row.split(" ")])
-                    #self._graph.append(list(map(lambda x: int(x), row.split(" "))))
+                    #self._graph.append(list(
+                    #                   map(lambda x: int(x), row.split(" "))))
             self._graph = np.array(self._graph)
 
     def visualize(self):
@@ -34,3 +33,7 @@ class Graph:
     def repr(self):
         ''' Print the adjcency matrix'''
         print(self._graph)
+
+    def bfs(self, source_node):
+        edges = nx.bfs_edges(nx.from_numpy_matrix(self._graph), source_node)
+        return edges
