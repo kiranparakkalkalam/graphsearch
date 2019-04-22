@@ -10,6 +10,7 @@ import numpy as np
 from settings import BASE_DIR
 from src.graph import Graph
 
+DATA_FILE_PATH="graphsearch/tests/data/"
 
 class TestGraph(unittest.TestCase):
 
@@ -17,7 +18,7 @@ class TestGraph(unittest.TestCase):
         pass
 
     def test_graph_initialization(self):
-        input_file = os.path.join(BASE_DIR, 'graphsearch/tests/data/',
+        input_file = os.path.join(BASE_DIR, DATA_FILE_PATH,
                                   'small_graph.txt')
         graph = Graph(input_file)
         first_row = np.array([0, 1, 1])
